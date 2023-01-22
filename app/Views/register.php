@@ -46,11 +46,11 @@
           </div>
 
           <div class="row">
-            <div class="col-12 col-sm-4">
+            <div class="col-12 col-sm-4 mt-4">
               <button type="submit" class="btn btn-primary">Register</button>
             </div>
-            <div class="col-12 col-sm-8 text-right">
-              <a href="/">Already have an account</a>
+            <div class="col-12 col-sm-8 text-right mt-4">
+              <a href="/login">Already have an account</a>
             </div>
           </div>
         </form>

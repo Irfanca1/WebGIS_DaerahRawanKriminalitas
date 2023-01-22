@@ -15,30 +15,13 @@ class Users extends BaseController
 
 
         if ($this->request->getMethod() == 'post') {
-            //let's do the validation here
-            // $rules = [
-            //     'email' => 'required|min_length[6]|max_length[50]|valid_email',
-            //     'password' => 'required|min_length[8]|max_length[255]|validateUser[email,password]',
-            // ];
-
-            // $errors = [
-            //     'password' => [
-            //         'validateUser' => 'Email or Password don\'t match'
-            //     ]
-            // ];
-
-            // if (!$this->validate($rules, $errors)) {
-            //     $data['validation'] = $this->validator;
-            // } else {
             $model = new M_User();
 
             $user = $model->where('email', $this->request->getVar('email'))
                 ->first();
 
             $this->setUserSession($user);
-            //$session->setFlashdata('success', 'Successful Registration');
             return redirect()->to('dashboard');
-            // }
         }
 
         echo view('templates/header', $data);
@@ -53,6 +36,7 @@ class Users extends BaseController
             'firstname' => $user['firstname'],
             'lastname' => $user['lastname'],
             'email' => $user['email'],
+            'role' => $user['role'],
             'isLoggedIn' => true,
         ];
 

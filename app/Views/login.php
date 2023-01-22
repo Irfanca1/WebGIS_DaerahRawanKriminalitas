@@ -15,9 +15,9 @@
           </div>
           <div class="row">
             <div class="col-12 col-sm-4">
-              <button type="submit" class="btn btn-primary">Login</button>
+              <button type="submit" class="btn btn-primary mt-4">Login</button>
             </div>
-            <div class="col-12 col-sm-8 text-right">
+            <div class="col-12 col-sm-8 text-right mt-4">
               <a href="/register">Don't have an account yet?</a>
             </div>
           </div>

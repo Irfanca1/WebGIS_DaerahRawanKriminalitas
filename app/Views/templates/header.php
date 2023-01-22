@@ -16,40 +16,56 @@
   <?php
   $uri = service('uri');
   ?>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg bg-transparant">
     <div class="container">
-      <a class="navbar-brand" href="#">Daerah Rawan Kriminalitas</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand fs-2" href="/">Ci4</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <?php if (session()->get('isLoggedIn')) : ?>
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item <?= ($uri->getSegment(1) == 'dashboard' ? 'active' : null) ?>">
-              <a class="nav-link" href="/dashboard">Dashboard</a>
-            </li>
-            <li class="nav-item <?= ($uri->getSegment(1) == 'wilayah' ? 'active' : null) ?>">
-              <a class="nav-link" href="/wilayah">Data Wilayah</a>
-            </li>
-            <li class="nav-item <?= ($uri->getSegment(1) == 'chat' ? 'active' : null) ?>">
-              <a class="nav-link" href="/chat">Chat</a>
-            </li>
-            <li class="nav-item <?= ($uri->getSegment(1) == 'maps' ? 'active' : null) ?>">
-              <a class="nav-link" href="/maps">Maps</a>
-            </li>
+            <?php $role = session()->get('role'); ?>
+            <?php if ($role == 'admin') :  ?>
+              <li class="nav-item fs-4<?= ($uri->getSegment(1) == 'dashboard' ? 'active' : null) ?>">
+                <a class="nav-link fs-4" href="/dashboard">Dashboard</a>
+              </li>
+              <li class="nav-item fs-4<?= ($uri->getSegment(1) == 'wilayah' ? 'active' : null) ?>">
+                <a class="nav-link fs-4" href="/wilayah">Data Wilayah</a>
+              </li>
+            <?php elseif ($role == 'user') :  ?>
+              <li class="nav-item fs-4<?= ($uri->getSegment(1) == 'chat' ? 'active' : null) ?>">
+                <a class="nav-link fs-4" href="/chat">Chat</a>
+              </li>
+              <li class="nav-item fs-4<?= ($uri->getSegment(1) == 'maps' ? 'active' : null) ?>">
+                <a class="nav-link fs-4" href="/maps">Maps</a>
+              </li>
+              <li class="nav-item fs-4<?= ($uri->getSegment(1) == 'halaman_utama' ? 'active' : null) ?>">
+                <a class="nav-link fs-4" href="/halaman_utama">Maps</a>
+              </li>
+            <?php endif; ?>
           </ul>
           <ul class="navbar-nav my-2 my-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="/logout">Logout</a>
+            <li class="nav-item fs-4">
+              <a class="nav-link fs-4" href="/logout">Logout</a>
             </li>
           </ul>
         <?php else : ?>
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item <?= ($uri->getSegment(1) == '' ? 'active' : null) ?>">
-              <a class="nav-link" href="/">Login</a>
+            <li class="nav-item fs-4<?= ($uri->getSegment(1) == 'chat' ? 'active' : null) ?>">
+              <a class="nav-link fs-4" href="/chat">Chat</a>
             </li>
-            <li class="nav-item <?= ($uri->getSegment(1) == 'register' ? 'active' : null) ?>">
-              <a class="nav-link" href="/register">Register</a>
+            <li class="nav-item fs-4<?= ($uri->getSegment(1) == 'maps' ? 'active' : null) ?>">
+              <a class="nav-link fs-4" href="/maps">Maps</a>
+            </li>
+            <li class="nav-item fs-4<?= ($uri->getSegment(1) == 'halaman_utama' ? 'active' : null) ?>">
+              <a class="nav-link fs-4" href="/halaman_utama">Halaman Utama</a>
+            </li>
+            <li class="nav-item fs-4<?= ($uri->getSegment(1) == 'login' ? 'active' : null) ?>">
+              <a class="nav-link fs-4" href="/login">Login</a>
+            </li>
+            <li class="nav-item fs-4<?= ($uri->getSegment(1) == 'register' ? 'active' : null) ?>">
+              <a class="nav-link fs-4" href="/register">Register</a>
             </li>
           </ul>
         <?php endif; ?>

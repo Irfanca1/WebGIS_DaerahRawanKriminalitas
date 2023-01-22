@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+
 body {
   background-color: #e1e1e1;
+  overflow-x: hidden;
 }
 
 .form-wrapper {
@@ -92,6 +95,28 @@ body {
 
 .right-msg .msg-img {
   float: right;
+}
+
+.hu-container {
+  /* background-image: linear-gradient(to right, rgb(241, 211, 63), rgb(247, 238, 136)); */
+  height: 80vh;
+  position: relative;
+  top: -12vh;
+  z-index: -1;
+}
+
+.hu-container img {
+  margin-top: 25vh;
+  margin-left: 10vh;
+}
+
+.hu-container .text {
+  color: rgba(110, 5, 5, 0.856);
+  font-size: 50px;
+  margin-top: 25vh;
+  margin-left: 20vh;
+  font-weight: bold;
+  font-family: 'Finger Paint', cursive;
 }
 
 @media (max-width: 768px) {

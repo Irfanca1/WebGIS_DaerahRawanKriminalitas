@@ -18,7 +18,7 @@ if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
  */
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
-$routes->setDefaultMethod('index');
+$routes->setDefaultMethod('halaman_utama');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
@@ -36,11 +36,13 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 
 // Route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Home::halaman_utama');
+$routes->get('/halaman_utama', 'Home::halaman_utama');
 $routes->cli('/server', 'Server::index');
 
 // Register dan Login
 $routes->get('/register', 'Users::register');
+$routes->get('/login', 'Users::index');
 $routes->post('/register', 'Users::register');
 $routes->post('/index', 'Users::index');
 $routes->get('/logout', 'Users::logout');
