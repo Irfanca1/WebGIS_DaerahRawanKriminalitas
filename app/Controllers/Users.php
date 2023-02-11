@@ -24,9 +24,9 @@ class Users extends BaseController
             return redirect()->to('dashboard');
         }
 
-        echo view('templates/header', $data);
+        echo view('users/templates/header', $data);
         echo view('login');
-        echo view('templates/footer');
+        echo view('users/templates/footer');
     }
 
     private function setUserSession($user)

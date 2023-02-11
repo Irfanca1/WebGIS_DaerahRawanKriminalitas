@@ -12,6 +12,7 @@ class Auth implements FilterInterface
     {
         // jika user belum login
         if (!session()->get('isLoggedIn')) {
+            echo "<script>Silakan Login Terlebih Dahulu!!</script>";
             return redirect()->to('/');
         }
     }

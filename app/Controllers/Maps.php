@@ -28,8 +28,8 @@ class Maps extends BaseController
             'dataWilayah' => $query->getResult(),
         ];
 
-        echo view('templates/header', $data);
+        echo view('users/templates/header', $data);
         echo view('maps/v_maps');
-        echo view('templates/footer');
+        echo view('users/templates/footer');
     }
 }

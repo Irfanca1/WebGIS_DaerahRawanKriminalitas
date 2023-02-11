@@ -75,7 +75,7 @@ class Wilayah extends BaseController
         'kabupaten_kota_id' => $this->request->getPost('kabkota'),
         'kecamatan_id'      => $this->request->getPost('kecamatan'),
         'kelurahan_id'      => $this->request->getPost('kelurahan'),
-        'users_id'               => session()->get('id'),
+        'users_id'          => session()->get('id'),
         'nama_daerah'       => $this->request->getPost('nama_daerah'),
         'latitude'          => $this->request->getPost('latitude'),
         'longitude'         => $this->request->getPost('longitude'),

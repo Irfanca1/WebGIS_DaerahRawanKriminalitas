@@ -15,8 +15,18 @@ class Home extends BaseController
         $data = [
             'title' => 'Daerah Rawan Kriminalitas'
         ];
-        echo view('templates/header', $data);
-        echo view('halaman_utama');
-        echo view('templates/footer');
+        echo view('users/templates/header', $data);
+        echo view('users/index');
+        echo view('users/templates/footer');
+    }
+
+    public function informasi()
+    {
+        $data = [
+            'title' => 'Informasi Rawan Kriminalitas'
+        ];
+        echo view('users/templates/header', $data);
+        echo view('users/informasi');
+        echo view('users/templates/footer');
     }
 }
