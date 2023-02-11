@@ -33,7 +33,7 @@
               <td><?= $dWilayah->longitude; ?></td>
               <td><?= $dWilayah->deskripsi; ?></td>
               <td>
-                <a href="/editWilayah/<?= $dWilayah->id; ?>"><i class="bi bi-pencil-fill fs-5"></i></a>
+                <a href="/editWilayah/<?= $dWilayah->id; ?>"><i class="bi bi-pencil-fill text-primary fs-5"></i></a>
                 <a href="/wilayahDelete/<?= $dWilayah->id; ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus?')"><i class="bi bi-trash3-fill ms-3 remove text-danger fs-5"></i></a>
               </td>
             </tr>

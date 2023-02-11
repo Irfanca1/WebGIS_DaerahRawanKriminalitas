@@ -10,8 +10,8 @@ class Chat extends BaseController
         $data = [
             'title' => 'Ci4 WebSocket Chat'
         ];
-        echo view('templates/header', $data);
+        echo view('users/templates/header', $data);
         echo view('chat');
-        echo view('templates/footer');
+        echo view('users/templates/footer');
     }
 }

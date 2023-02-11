@@ -41,6 +41,7 @@ $submit = [
     <div class="col-md-12">
         <div class="card">
             <div class="card-header card-header-primary">
+                <a href="<?= base_url('/wilayah'); ?>" class="btn btn-primary mb-5 mt-3">Kembali</a>
                 <h4 class="card-title">Edit Data</h4>
                 <p class="card-category">
                     Menu Edit Data

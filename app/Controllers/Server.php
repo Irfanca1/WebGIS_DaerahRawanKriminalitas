@@ -10,7 +10,7 @@ use App\Libraries\Chat;
 // require dirname(__DIR__) . '\vendor\autoload.php';
 
 // Masuk ke public
-// jelanakan server php index.php server
+// jelanakan server = php index.php server
 
 class Server extends BaseController
 {

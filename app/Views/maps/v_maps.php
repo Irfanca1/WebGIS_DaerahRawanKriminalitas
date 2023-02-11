@@ -8,8 +8,6 @@
         height: 500px;
     }
 </style>
-
-<h2>Daerah Rawan Kriminalitas</h2>
 <div id="maps"></div>
 
 <script>
