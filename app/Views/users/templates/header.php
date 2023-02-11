@@ -72,7 +72,7 @@
                                 <a class="nav-link <?= ($uri->getSegment(1) == 'maps' ? 'active' : null) ?>" href="/maps_user">Peta</a>
                             </li>
                             <li class="nav-item mx-2">
-                                <a class="nav-link <?= ($uri->getSegment(1) == 'diskusi' ? 'active' : null) ?>" href="/chat">Diskusi</a>
+                                <a class="nav-link <?= ($uri->getSegment(1) == 'diskusi' ? 'active' : null) ?>" onclick="diskusi()" href="/chat">Diskusi</a>
                             </li>
                         </ul>
                         <a class="btn btn-primary mx-2 <?= ($uri->getSegment(1) == 'login' ? 'active' : null) ?>" href="/login">Masuk</a>
