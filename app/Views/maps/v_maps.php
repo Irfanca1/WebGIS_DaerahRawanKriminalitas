@@ -25,6 +25,6 @@
         L.marker({
             lon: <?= $row->longitude; ?>,
             lat: <?= $row->latitude; ?>
-        }).bindPopup('<br> <img src="<?= base_url(); ?>/img/<?= $row->gambar; ?>" width="200"> <br> <h5><center>Rawan <?= $row->deskripsi; ?> </center></h5> <b>Jalan</b> : <?= $row->nama_daerah; ?> <br> <b>Kecamatan</b> : <?= $row->kecnama; ?> <br> <b>Kelurahan</b> : <?= $row->kelnama; ?>').addTo(map);
+        }).bindPopup('<br> <img src="<?= base_url(); ?>/img/<?= $row->gambar; ?>" width="200"> <br> <h5><center>Rawan <?= $row->deskripsi; ?> </center></h5> <b>Daerah</b> : <?= $row->nama_daerah; ?> <br> <b>Kecamatan</b> : <?= $row->kecnama; ?> <br> <b>Kelurahan</b> : <?= $row->kelnama; ?>').addTo(map);
     <?php endforeach; ?>
 </script>

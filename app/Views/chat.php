@@ -43,7 +43,7 @@
     function getImages() {
         const imgs = {
             'Mary': 'mary.jpg',
-            'Jon': 'jon.jpg',
+            'Irfan': 'irfan.jpg',
             'Alex': 'alex.jpg',
         }
 
@@ -84,7 +84,7 @@
 
         html = `<div class="col-8 msg-item left-msg">
                     <div class="msg-img">
-                      <img class="img-thumbnail rounded-circle" src="/assets/img/` + imgs[msg.author] + `">
+                      <img class="img-thumbnail rounded-circle" src="<?= base_url(); ?>/assets/img/` + imgs[msg.author] + `">
                     </div>
                     <div class="msg-text">
                       <span class="author">` + msg.author + `</span> <span class="time">` + msg.time + `</span><br>
@@ -105,7 +105,7 @@
         var time = hour + ':' + minutes
         html = `<div class="col-8 msg-item right-msg offset-4">
                     <div class="msg-img">
-                      <img class="img-thumbnail rounded-circle" src="/assets/img/` + imgs[name] + `">
+                      <img class="img-thumbnail rounded-circle" src="<?= base_url(); ?>/assets/img/` + imgs[name] + `">
                     </div>
                     <div class="msg-text">
                       <span class="author">Me</span> <span class="time">` + time + `</span><br>

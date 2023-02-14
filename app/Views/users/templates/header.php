@@ -43,6 +43,9 @@
                                 <li class="nav-item<?= ($uri->getSegment(1) == 'wilayah' ? 'active' : null) ?>">
                                     <a class="nav-link" href="/wilayah">Data Wilayah</a>
                                 </li>
+                                <li class="nav-item mx-2">
+                                    <a class="nav-link <?= ($uri->getSegment(1) == 'maps' ? 'active' : null) ?>" href="/maps">Peta</a>
+                                </li>
                                 <a class="btn btn-primary mx-2 <?= ($uri->getSegment(1) == 'keluar' ? 'active' : null) ?>" href="/logout">Keluar</a>
                             <?php elseif ($role == 'user') : ?>
                                 <li class="nav-item mx-2">

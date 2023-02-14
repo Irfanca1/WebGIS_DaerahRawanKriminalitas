@@ -80,9 +80,9 @@ class Users extends BaseController
         }
 
 
-        echo view('templates/header', $data);
+        echo view('users/templates/header', $data);
         echo view('register');
-        echo view('templates/footer');
+        echo view('users/templates/footer');
     }
 
     public function profile()
