@@ -1,7 +1,6 @@
 <!-- ===== JAVASCRIPT ===== -->
 <script>
     // variables
-    // const newsBtn = document.getElementById('news');
     const newsType = document.getElementById('newsType');
     const newsdetails = document.getElementById('newsdetails');
 
@@ -9,21 +8,20 @@
     let newsDataArr = [];
 
     // APIs
-    const API_KEY = '8e3fa8e23dd64c7da87a764ed8bcfa65';
     const HEADLINES_NEWS =
-        'https://newsapi.org/v2/everything?q=polisi%20bandung&pageSize=8&apiKey=';
+        'https://berita-indo-api.vercel.app/v1/tribun-news/jabar';
 
     window.onload = function() {
-        newsType.innerHTML = '<h1>Berita Kota Bandung</h1>';
+        newsType.innerHTML = '<h1>Berita Terbaru</h1>';
         headlinesNews();
     };
 
     const headlinesNews = async () => {
-        const response = await fetch(HEADLINES_NEWS + API_KEY);
+        const response = await fetch(HEADLINES_NEWS);
         newsDataArr = [];
         if (response.status >= 200 && response.status < 300) {
             const resJson = await response.json();
-            newsDataArr = resJson.articles;
+            newsDataArr = resJson.data;
             console.log(newsDataArr);
         } else {
             console.log(response.status, response.statusText);
@@ -45,7 +43,7 @@
             let image = document.createElement('img');
             image.setAttribute('height', 'matchparent');
             image.setAttribute('width', '100%');
-            image.src = news.urlToImage;
+            image.src = news.image;
 
             let cardBody = document.createElement('div');
 
@@ -55,12 +53,12 @@
 
             let description = document.createElement('p');
             description.className = 'text-muted';
-            description.innerHTML = news.description;
+            description.innerHTML = news.contentSnippet;
 
             let link = document.createElement('a');
             link.className = 'btn btn-dark';
             link.setAttribute('target', '_blank');
-            link.href = news.url;
+            link.href = news.link;
             link.innerHTML = 'Read more..';
 
             cardBody.appendChild(newsHeading);
